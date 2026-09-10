@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+/* Tailwind v4 — scan templates/content/JS for utility classes. Paths are
+   relative to this file (assets/css/). */
+@source "../../layouts/**/*.html";
+@source "../../content/**/*.md";
+@source "../../content/**/*.html";
+@source "../../assets/javascript/*.js";
+/* The embedded Elm app emits Tailwind class names as string literals in its
+   compiled bundle — scan it so those utilities are generated. */
+@source "../../assets/javascript/vendor/elm-main.js";
+
+@theme {
+  /* eheza's product typeface (loaded in head.html). */
+  --font-sans: "Nunito", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", serif;
+
+  /* eheza palette. `accent` is the site's blue, darkened just enough that white
+     text on it and it-as-text on white both clear WCAG 2.1 AA; the brighter
+     brand cyan is reserved for non-text fills. Recolour the whole mock here. */
+  --color-accent:      #0273b2; /* eheza secondary blue — banners, tiles, links */
+  --color-accent-dark: #015a86; /* hover */
+  --color-accent-soft: #e0e7ff; /* soft fills */
+  --color-brand-navy:  #00374f; /* eheza dark-blue — drill-down table header */
+
+  /* Trend + status colours (chart lines set their own hex inline). */
+  --color-trend-avg:  #2f7d32; /* green — up indicators / inter-site average */
+  --color-alert:      #c21f5b; /* eheza red-alert (darkened for AA as text) */
+  --color-bar-track:  #9aa6b2; /* coverage-bar remainder */
+}
+
+@layer base {
+  body {
+    @apply font-sans antialiased;
+  }
+}

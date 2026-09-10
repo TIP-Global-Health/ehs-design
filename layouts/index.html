@@ -1,0 +1,9 @@
+{{ define "main" }}
+<main class="flex grow flex-col">
+  {{/* boot.js mounts the compiled Elm dashboards app into this node. It is a
+       mock — no network call is made; all figures live in the Elm app. */}}
+  <div data-dashboards-app>
+    <p class="mx-auto max-w-3xl px-4 py-8 text-slate-600">Loading the dashboards…</p>
+  </div>
+</main>
+{{ end }}

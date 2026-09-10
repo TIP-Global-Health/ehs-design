@@ -1,0 +1,14 @@
+languageCode: "en-us"
+# No project-specific baseURL is baked in. Dev sets it via HUGO_BASEURL
+# (docker-compose.yml); the static build requires HUGO_BASEURL (make build).
+baseURL: "/"
+title: "eHS Dashboards Mock"
+disableKinds:
+  - "taxonomy"
+  - "term"
+params:
+  description: "Interactive, offline mockups of the HealthyStart eHS Facility Performance (Dashboard II) and Program Monitoring (Dashboard III) dashboards."
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
